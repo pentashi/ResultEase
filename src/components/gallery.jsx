@@ -1,33 +1,31 @@
-import { Image } from "./image";
 import React from "react";
 
 export const Gallery = (props) => {
+  // Define the source of the YouTube video
+  const videoSource = "https://www.youtube.com/embed/588Oyso1FpA";
+
   return (
     <div id="portfolio" className="text-center">
       <div className="container">
         <div className="section-title">
-          <h2>Gallery</h2>
+          <h2>User Guide</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
+          Watch the User Guide below
           </p>
         </div>
         <div className="row">
-          <div className="portfolio-items">
-            {props.data
-              ? props.data.map((d, i) => (
-                  <div
-                    key={`${d.title}-${i}`}
-                    className="col-sm-6 col-md-4 col-lg-4"
-                  >
-                    <Image
-                      title={d.title}
-                      largeImage={d.largeImage}
-                      smallImage={d.smallImage}
-                    />
-                  </div>
-                ))
-              : "Loading..."}
+          <div className="col-md-12">
+            <div className="portfolio-item">
+              <iframe
+                width="1077"
+                height="606"
+                src={videoSource}
+                title="Student Teaching"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
